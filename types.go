@@ -20,8 +20,6 @@ type Item struct {
 	Docs string `json:"docs,omitempty"`
 }
 
-}
-
 type Request struct {
 	URL        string   `json:"url"`
 	Method     string   `json:"method"`
