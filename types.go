@@ -21,6 +21,10 @@ type Item struct {
 	Docs string `json:"-"`
 }
 
+func (item *Item) IsFolder() bool {
+	return len(item.Items) > 0
+}
+
 type Request struct {
 	URL        string   `json:"url"`
 	Method     string   `json:"method"`
