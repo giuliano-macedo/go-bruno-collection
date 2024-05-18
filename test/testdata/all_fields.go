@@ -1,6 +1,6 @@
 package testdata
 
-import bruno "github.com/giuliano-macedo/go-bruno-collection/pkg"
+import bruno "github.com/giuliano-macedo/go-bruno-collection"
 
 var AllFields = TestCase{
 	"all fields",

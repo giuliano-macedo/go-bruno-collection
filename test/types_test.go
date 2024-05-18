@@ -1,12 +1,12 @@
-package bruno_test
+package bruno
 
 import (
 	"encoding/json"
 	"fmt"
 	"testing"
 
-	bruno "github.com/giuliano-macedo/go-bruno-collection/pkg"
-	"github.com/giuliano-macedo/go-bruno-collection/pkg/test/testdata"
+	"github.com/giuliano-macedo/go-bruno-collection"
+	"github.com/giuliano-macedo/go-bruno-collection/test/testdata"
 	"github.com/stretchr/testify/require"
 )
 
