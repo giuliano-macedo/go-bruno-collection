@@ -17,9 +17,15 @@ var AllFields = TestCase{
 						Name: "RequestName2",
 						Seq:  1,
 						Request: &bruno.Request{
-							URL:     "{{baseUrl}}/request2",
-							Method:  "GET",
-							Headers: []string{},
+							URL:    "{{baseUrl}}/request2",
+							Method: "GET",
+							Headers: []bruno.Header{
+								bruno.Header{
+									Name:    "Content-Type",
+									Value:   "application/json",
+									Enabled: true,
+								},
+							},
 							Body: bruno.Body{
 								Mode:           "none",
 								FormUrlEncoded: []string{},
@@ -51,7 +57,7 @@ var AllFields = TestCase{
 				Request: &bruno.Request{
 					URL:     "{{baseUrl}}/request1",
 					Method:  "POST",
-					Headers: []string{},
+					Headers: []bruno.Header{},
 					Body: bruno.Body{
 						Mode:           "json",
 						Json:           "{\n  \"hello\": \"world\",\n  \"var\": \"{{myVariable}}\"\n}",
@@ -135,7 +141,13 @@ var AllFields = TestCase{
 				"request": {
 				  "url": "{{baseUrl}}/request2",
 				  "method": "GET",
-				  "headers": [],
+				  "headers": [
+					{
+						"name": "Content-Type",
+						"value": "application/json",
+						"enabled": true
+					}
+				  ],
 				  "body": {
 					"mode": "none",
 					"formUrlEncoded": [],

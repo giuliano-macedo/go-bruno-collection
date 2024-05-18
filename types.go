@@ -23,7 +23,7 @@ type Item struct {
 type Request struct {
 	URL        string   `json:"url"`
 	Method     string   `json:"method"`
-	Headers    []string `json:"headers"`
+	Headers    []Header `json:"headers"`
 	Body       Body     `json:"body"`
 	Auth       Auth     `json:"auth"`
 	Script     Script   `json:"script"`
@@ -31,6 +31,12 @@ type Request struct {
 	Assertions []string `json:"assertions"`
 	Tests      string   `json:"tests"`
 	Query      []string `json:"query"`
+}
+
+type Header struct {
+	Name    string `json:"name"`
+	Value   string `json:"value"`
+	Enabled bool   `json:"enabled"`
 }
 
 type Body struct {
