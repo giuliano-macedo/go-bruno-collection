@@ -1,7 +1,7 @@
 # Bruno collection types for Go
 ![Coverage](https://img.shields.io/badge/Coverage-91.5%25-brightgreen)
 
-This repo contains the type definitions for creating valid bruno collections, it features:
+This repo contains the type definitions for creating valid [bruno](https://github.com/usebruno/bruno) collections, it features:
 * bruno json collection marshalling/unmarshaling
 * marshaling collection into a tar file containing all the .bru definitions
 
