@@ -17,8 +17,10 @@ type Item struct {
 	Seq     int      `json:"seq,omitempty"`
 	Items   []Item   `json:"items,omitempty"`
 	Request *Request `json:"request,omitempty"`
-	// Curently not supported in bruno while importing from json collections
-	Docs string `json:"-"`
+}
+
+func (item *Item) IsFolder() bool {
+	return len(item.Items) > 0
 }
 
 type Request struct {

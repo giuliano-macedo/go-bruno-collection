@@ -1,0 +1,116 @@
+{
+  "name": "CollectionName",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "FolderName",
+      "items": [
+        {
+          "type": "http",
+          "name": "RequestName2",
+          "seq": 1,
+          "request": {
+            "url": "{{baseUrl}}/request2",
+            "method": "GET",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "auth": {
+              "mode": "none",
+              "basic": { "username": "", "password": "" },
+              "bearer": { "token": "" }
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "params": null
+          }
+        }
+      ]
+    },
+    {
+      "type": "http-request",
+      "name": "RequestName1",
+      "seq": 1,
+      "request": {
+        "url": "{{baseUrl}}/request1",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          },
+          { "name": "Disabled", "value": "foo", "enabled": false }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"hello\": \"world\",\n  \"var\": \"{{myVariable}}\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "auth": {
+          "mode": "none",
+          "basic": { "username": "", "password": "" },
+          "bearer": { "token": "" }
+        },
+        "script": {
+          "req": "console.log(\"hellow rold\")",
+          "res": "console.log(\"hellow rold\")"
+        },
+        "vars": {
+          "req": [
+            { "name": "x", "value": "1", "enabled": true, "local": false }
+          ],
+          "res": [
+            { "name": "y", "value": "2", "enabled": true, "local": false }
+          ]
+        },
+        "assertions": [],
+        "tests": "",
+        "docs": "Request docs",
+        "params": null
+      }
+    }
+  ],
+  "activeEnvironmentUid": "CmLVov8jg1StssHjThi2G",
+  "environments": [
+    {
+      "name": "EnvironmentName",
+      "variables": [
+        {
+          "name": "baseUrl",
+          "value": "https://example.com",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "disabled",
+          "value": "1",
+          "enabled": false,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "myVariable",
+          "value": "",
+          "enabled": true,
+          "secret": true,
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

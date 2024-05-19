@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  unit_tests:
+    cmds:
+      - go test -coverprofile cover.out -coverpkg=./... ./...
+      - go tool cover -func cover.out
+
+  coverage_html:
+    cmds:
+      - go tool cover -html cover.out -o cover.html
