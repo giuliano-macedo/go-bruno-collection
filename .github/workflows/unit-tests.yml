@@ -1,0 +1,32 @@
+name: Go
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: ["1.22.0"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go-version }}
+
+      - name: Install Task
+        uses: arduino/setup-task@v2
+        with:
+          version: 3.36.0
+
+      - name: Run Tests
+        run: task unit_tests
