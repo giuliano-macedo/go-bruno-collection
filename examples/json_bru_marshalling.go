@@ -22,13 +22,6 @@ func createMyCollection() bruno.Collection {
 		},
 		Auth: bruno.Auth{
 			Mode: "none",
-			Basic: bruno.Basic{
-				Username: "",
-				Password: "",
-			},
-			Bearer: bruno.Bearer{
-				Token: "",
-			},
 		},
 		Script: bruno.Script{
 			Req: "console.log(\"hellow rold\")",
@@ -52,9 +45,7 @@ func createMyCollection() bruno.Collection {
 				},
 			},
 		},
-		Assertions: []string{},
-		Tests:      "",
-		Docs:       "Request docs",
+		Docs: "Request docs",
 	}
 
 	item := bruno.Item{
