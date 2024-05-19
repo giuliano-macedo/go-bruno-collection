@@ -13,3 +13,4 @@ Look at the [examples](./examples/)
 ```
 go get github.com/giuliano-macedo/go-bruno-collection
 ```
+
