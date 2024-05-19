@@ -7,7 +7,8 @@ type Collection struct {
 	ActiveEnvironmentUid string        `json:"activeEnvironmentUid"`
 	Environments         []Environment `json:"environments"`
 	// Curently not supported in bruno while importing from json collections
-	Docs string `json:"docs,omitempty"`
+	Docs string `json:"-"`
+	Uid  string `json:"uid,omitempty"`
 }
 
 type Item struct {
@@ -17,7 +18,7 @@ type Item struct {
 	Items   []Item   `json:"items,omitempty"`
 	Request *Request `json:"request,omitempty"`
 	// Curently not supported in bruno while importing from json collections
-	Docs string `json:"docs,omitempty"`
+	Docs string `json:"-"`
 }
 
 type Request struct {
@@ -30,7 +31,17 @@ type Request struct {
 	Vars       Vars     `json:"vars"`
 	Assertions []string `json:"assertions"`
 	Tests      string   `json:"tests"`
-	Query      []string `json:"query"`
+	Docs       string   `json:"docs,omitempty"`
+	Query      []string `json:"query,omitempty"`
+	Params     []Param  `json:"params"`
+}
+
+type Param struct {
+	Uid         string `json:"uid,omitempty"`
+	Name        string `json:"name,omitempty"`
+	Value       string `json:"value,omitempty"`
+	Description string `json:"description,omitempty"`
+	Enabled     bool   `json:"enabled,omitempty"`
 }
 
 type Header struct {
@@ -79,8 +90,9 @@ type Variable struct {
 }
 
 type Environment struct {
-	Variables []EnvironmentVariable `json:"variables"`
+	Uid       string                `json:"uid,omitempty"`
 	Name      string                `json:"name"`
+	Variables []EnvironmentVariable `json:"variables"`
 }
 
 type EnvironmentVariable struct {
