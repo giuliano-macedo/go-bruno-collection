@@ -1,4 +1,5 @@
 # Bruno collection types for Go
+![Coverage](https://img.shields.io/badge/Coverage-1-red)
 
 This repo contains the type definitions for creating valid bruno collections, it features:
 * bruno json collection marshalling/unmarshaling
